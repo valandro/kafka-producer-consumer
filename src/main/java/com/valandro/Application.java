@@ -11,7 +11,10 @@ public class Application {
 
     public static Logger logger = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Long startTime = System.currentTimeMillis();
         SpringApplication.run(Application.class, args).close();
+        Long endTime = System.currentTimeMillis();
+        System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }
 }
