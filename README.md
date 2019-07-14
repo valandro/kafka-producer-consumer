@@ -47,8 +47,13 @@ After, set your java version to **10.x.x** and:
 - Gradle 4.7+
 - Spring boot 2.0.3
 
+### Kafka Docker
+
+The Apache's Kafka docker configuration was taken in [this github.](https://github.com/wurstmeister/kafka-docker)
+
 ### References
 
+- https://github.com/wurstmeister/kafka-docker
 - https://kafka.apache.org
 - https://en.wikipedia.org/wiki/Message_broker
 
