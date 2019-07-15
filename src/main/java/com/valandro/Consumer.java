@@ -8,11 +8,17 @@ import java.util.concurrent.CountDownLatch;
 @Component
 public class Consumer {
 
-    private CountDownLatch latch = new CountDownLatch(100000);
+    private CountDownLatch latch = new CountDownLatch(100);
 
-    @KafkaListener(topics = "one-queue", groupId = "one")
+    @KafkaListener(topics = "male", groupId = "one")
+    public void listenMale(String message) {
+        System.out.println("Received Male <" + message + ">");
+        latch.countDown();
+    }
+
+    @KafkaListener(topics = "female", groupId = "one")
     public void listen(String message) {
-        System.out.println("Received <" + message + ">");
+        System.out.println("Received Female <" + message + ">");
         latch.countDown();
     }
 
